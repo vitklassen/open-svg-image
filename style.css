@@ -1,22 +1,7 @@
-.form {
-    width: 320px;
-    height: 100vh;
-    background: rgba(255, 255, 255, .95);
-    border-right: 1px solid #000;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-  }
-  .button {
-    width: 200px;
-    height: 20px;
-    background: rgba(255, 255, 255, .95);
-    border-right: 1px solid #000;
-    position: absolute;
-    top: 100px;
-    right: 50px;
-  }
   .SVG {
     width: 100%;
     height: 100%;
+  }
+  .containerSVG {
+    margin: auto;
   }
