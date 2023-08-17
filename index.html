@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open SVG-file</title>
+</head>
+<body class="main">
+    <h1>Demo for svg-pan-zoom: In-line SVG</h1>
+    <form class="form">
+        <input class="form__input" type="text" placeholder="Введите id" id="myInput">
+    </form>
+    <button class="button" type="button"></button>
+    <div id="container" style="width: 1600px; height: 1200px; border:1px solid black;">
+        <!--<object class="svg-image" type="image/svg+xml" data="./grf_195.svg"></object>-->
+        <iframe class="SVG" src="./grf_195.svg" scrolling="no"></iframe>
+    </div>
+    <script src="./package/dist/d3.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
