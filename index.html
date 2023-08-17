@@ -7,11 +7,10 @@
   <title>Open SVG-file</title>
 </head>
 <body class="main">
-    <h1>Demo for svg-pan-zoom: In-line SVG</h1>
-    <div id="container" class="containerSVG" style="width: 1600px; height: 1200px; border:1px solid black;">
-        <iframe class="SVG" src="./grf_195.svg" scrolling="no"></iframe>
-    </div>
-    <script src="./package/dist/d3.min.js"></script>
-    <script src="./script.js"></script>
+    <h1 class="title">Demo for svg-pan-zoom: In-line SVG</h1>
+    <button class="button" type="button">Загрузить SVG</button>
+    <div id="svg-container" class="containerSVG" style="width: 1600px; height: 1200px"></div>
+    <script src="./package/dist/d3.min.js" defer></script>
+    <script src="./index.js" defer></script>
 </body>
 </html>

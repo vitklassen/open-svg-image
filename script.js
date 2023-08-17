@@ -1,6 +1,9 @@
-function a () {
+function getSVG() {
   let svgObject = document.querySelector('iframe');
-  let svgFile = svgObject.contentWindow.frameElement.contentDocument.querySelector('svg');
+  return svgObject.contentWindow.frameElement.contentDocument.querySelector('svg');
+}
+function setZoom () {
+  let svgFile = getSVG();
   let gFile = svgFile.querySelector('g');
   let zoom = d3.zoom().on('zoom', handleZoom);
   d3.select(svgFile).call(zoom);
@@ -8,4 +11,11 @@ function a () {
     d3.select(gFile).attr('transform', e.transform);
   }
 }
-setTimeout(a, 500);
+function changeText() {
+  let svgFile = getSVG();
+  let textBlock = svgFile.getElementById('text9');
+  let val = Math.floor(Math.random() * 1000);
+  textBlock.textContent = val;
+}
+setTimeout(setZoom, 500);
+setTimeout(setInterval(changeText, 1000), 500);
