@@ -6,22 +6,28 @@ function main() {
   });
 }
 function setZoom() {
-  let svgFile = getSVG();
-  let gFile = svgFile.querySelector("g");
-  let zoom = d3.zoom().on("zoom", handleZoom);
+  const svgFile = getSVG();
+  const zoom = d3.zoom().on("zoom", handleZoom);
   d3.select(svgFile).call(zoom);
-  function handleZoom(e) {
-    d3.select(gFile).attr("transform", e.transform);
-  }
 }
 function changeText() {
-  let svgFile = getSVG();
-  let textBlock = svgFile.getElementById("text9");
-  let val = Math.floor(Math.random() * 1000);
+  const svgFile = getSVG();
+  const textBlock = svgFile.getElementById("text9");
+  const val = Math.floor(Math.random() * 1000);
   textBlock.textContent = val;
 }
 function getSVG() {
   return document.querySelector("svg");
 }
+function handleZoom(e) {
+  const gFile = getSVG().querySelector("g");
+  d3.select(gFile).attr("transform", e.transform);
+}
+function disableButton(button) {
+  button.setAttribute("disabled", "");
+}
 const buttonElement = document.querySelector("button");
-buttonElement.addEventListener("click", main);
+buttonElement.addEventListener("click", function () {
+  main();
+  disableButton(buttonElement);
+});
